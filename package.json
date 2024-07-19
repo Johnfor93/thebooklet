@@ -12,6 +12,7 @@
   "dependencies": {
     "@vercel/postgres": "^0.9.0",
     "bcrypt": "^5.1.1",
+    "moment": "^2.30.1",
     "nuxt": "^3.12.3",
     "preline": "^2.3.0",
     "vue": "latest"

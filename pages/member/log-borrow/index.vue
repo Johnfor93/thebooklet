@@ -6,8 +6,8 @@
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="px-6 py-3">Book name</th>
-          <th scope="col" class="px-6 py-3">Borrow Date</th>
           <th scope="col" class="px-6 py-3">Admin when borrow</th>
+          <th scope="col" class="px-6 py-3">Borrow Date</th>
           <th scope="col" class="px-6 py-3">Due Date</th>
           <th scope="col" class="px-6 py-3">Action</th>
         </tr>
@@ -15,9 +15,9 @@
       <tbody v-for="(item, index) in logBorrow">
         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ item.title }}</th>
-          <td class="px-6 py-4">{{ item.borrow_date }}</td>
           <td class="px-6 py-4">{{ item.adminname }}</td>
-          <td class="px-6 py-4">{{ item.due_date }}</td>
+          <td class="px-6 py-4">{{ formatDate(item.borrow_date) }}</td>
+          <td class="px-6 py-4">{{ formatDate(item.due_date) }}</td>
           <td class="py-4">
             <NuxtLink
               :to="`/member/log-borrow/${id}`"
@@ -34,6 +34,8 @@
 </template>
 
 <script setup>
+import moment from "moment";
+
 definePageMeta({
   layout: "member",
 });
@@ -60,6 +62,11 @@ async function getLogBorrow() {
   console.log(response);
   logBorrow.value = response.data;
   console.log(logBorrow.value);
+}
+
+function formatDate(param) {
+  console.log(moment(param).format());
+  return moment(param).format("DD MMM YYYY");
 }
 
 getLogBorrow();

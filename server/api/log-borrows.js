@@ -4,7 +4,12 @@ export default defineEventHandler(async () => {
   try {
     const users = await sql`
         SELECT 
-            log_borrow.*,
+            log_borrow.id,
+            log_borrow.member_id,
+            log_borrow.id_book,
+            log_borrow.id_admin,
+            TO_CHAR(log_borrow.due_date, 'yyyy/mm/dd') as due_date,
+            TO_CHAR(log_borrow.borrow_date, 'yyyy/mm/dd') as borrow_date,
             books.title,
             member.name as memberName,
             admin.name as adminName 
