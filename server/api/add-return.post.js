@@ -4,7 +4,7 @@ export default defineEventHandler(async (request) => {
   try {
     const dataBody = await readBody(request);
 
-    const data = await sql`INSERT INTO log_borrow(id_book, id_admin, member_id, borrow_date, due_date) VALUES(${dataBody.idBook}, ${dataBody.idAdmin}, ${dataBody.idMember}, ${dataBody.borrowDate}, ${dataBody.dueDate})`;
+    const data = await sql`INSERT INTO log_return(id_log_borrow, id_admin, return_date, sanction) VALUES(${dataBody.idLogBorrow}, ${dataBody.idAdmin}, ${dataBody.returnDate}, ${dataBody.sanction})`;
     console.log(data);
     return {
       success: true,

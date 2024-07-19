@@ -25,6 +25,9 @@
           <th scope="col" class="px-6 py-3">Book name</th>
           <th scope="col" class="px-6 py-3">Borrow Date</th>
           <th scope="col" class="px-6 py-3">Due Date</th>
+          <th scope="col" class="px-6 py-3">Return Date</th>
+          <th scope="col" class="px-6 py-3">Sanction</th>
+          <th scope="col" class="px-6 py-3">Action</th>
         </tr>
       </thead>
       <tbody v-for="(item, index) in logBorrow">
@@ -33,14 +36,30 @@
           <td class="px-6 py-4">{{ item.title }}</td>
           <td class="px-6 py-4">{{ formatDate(item.borrow_date) }}</td>
           <td class="px-6 py-4">{{ formatDate(item.due_date) }}</td>
+          <td class="px-6 py-4">{{ item.return_date ? formatDate(item.return_date) : "-" }}</td>
+          <td class="px-6 py-4">{{ item.return_date ? item.sanction : "-" }}</td>
+          <td class="px-6 py-4">
+            <span v-if="item.return_date" class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Returned</span>
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              @click="showReturnModalFunction(item)"
+              v-else
+            >
+              Set Return
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <FormReturn v-show="showReturnModal" :detail="borrowDetail" @closeFormReturnModal="closeFormReturnModal"></FormReturn>
 </template>
 
 <script setup>
 import FormBorrow from "~/components/Modals/FormBorrow.vue";
+import FormReturn from "~/components/Modals/FormReturn.vue";
 import moment from "moment";
 
 definePageMeta({
@@ -53,20 +72,37 @@ useHead({
 });
 
 let showModal = ref(false);
+const showReturnModal = ref(false);
 
 function showBorrowModal() {
   showModal.value = true;
 }
 
-function closeBorrowFormModal() {
+function closeBorrowFormModal(inserted) {
   showModal.value = false;
+  if (inserted) {
+    getLogBorrow();
+  }
+}
+
+function showReturnModalFunction(item) {
+  showReturnModal.value = true;
+  borrowDetail.value = item;
+}
+
+function closeFormReturnModal() {
+  showReturnModal.value = false;
+  borrowDetail.value = [];
+  getLogBorrow();
 }
 
 const logBorrow = ref([]);
+const borrowDetail = ref({});
 
 async function getLogBorrow() {
-  let response = await $fetch("/api/log-borrows");
+  let response = await $fetch("/api/log-return");
   logBorrow.value = response.data;
+  console.log(logBorrow.value);
 }
 
 function formatDate(param) {
