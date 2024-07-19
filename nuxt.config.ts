@@ -19,7 +19,15 @@ export default defineNuxtConfig({
 
   plugins: ["~/plugins/preline.client.ts"],
   compatibilityDate: "2024-07-03",
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+  modules: [
+    "@pinia/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "nuxt-lucide-icons",
+  ],
+  lucide: {
+    namePrefix: 'li-'
+  },
   pinia: {
     storesDirs: ["./stores/**"],
   },

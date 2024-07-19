@@ -27,8 +27,13 @@
           <td class="px-6 py-4">Silver</td>
           <td class="px-6 py-4">Laptop</td>
           <td class="px-6 py-4">$2999</td>
-          <td class="px-6 py-4">
-            <NuxtLink :to="`/member/log-borrow/${id}`"></NuxtLink>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
           </td>
         </tr>
         <tr
@@ -41,7 +46,14 @@
           <td class="px-6 py-4">White</td>
           <td class="px-6 py-4">Laptop PC</td>
           <td class="px-6 py-4">$1999</td>
-          <td class="px-6 py-4">$1999</td>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
+          </td>
         </tr>
         <tr
           class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -53,7 +65,14 @@
           <td class="px-6 py-4">White</td>
           <td class="px-6 py-4">Laptop PC</td>
           <td class="px-6 py-4">$1999</td>
-          <td class="px-6 py-4">$1999</td>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
+          </td>
         </tr>
         <tr
           class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -65,7 +84,14 @@
           <td class="px-6 py-4">White</td>
           <td class="px-6 py-4">Laptop PC</td>
           <td class="px-6 py-4">$1999</td>
-          <td class="px-6 py-4">$1999</td>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
+          </td>
         </tr>
         <tr
           class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -77,7 +103,14 @@
           <td class="px-6 py-4">White</td>
           <td class="px-6 py-4">Laptop PC</td>
           <td class="px-6 py-4">$1999</td>
-          <td class="px-6 py-4">$1999</td>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
+          </td>
         </tr>
         <tr
           class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -89,7 +122,14 @@
           <td class="px-6 py-4">White</td>
           <td class="px-6 py-4">Laptop PC</td>
           <td class="px-6 py-4">$1999</td>
-          <td class="px-6 py-4">$1999</td>
+          <td class="py-4">
+            <NuxtLink
+              :to="`/member/log-borrow/${id}`"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex w-fit justify-center items-center">
+              <li-info size="12" class="me-2"></li-info>
+              Detail
+            </NuxtLink>
+          </td>
         </tr>
       </tbody>
     </table>
