@@ -1,19 +1,11 @@
 <template>
   <div class="flex justify-between items-center">
     <div class="w-6/12">
-      <h3 class="font-bold text-lg">Log Borrow Book</h3>
+      <h3 class="font-bold text-lg">List Member</h3>
       <p class="mb-4 text-gray-700">
-        You can see transaction for borrowing book from The Booklet
+        You can see list member that registered on The Booklet
       </p>
     </div>
-    <button
-      type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-      data-modal-target="crud-modal"
-      data-modal-toggle="crud-modal"
-      @click="showBorrowModal">
-      New Transaction
-    </button>
   </div>
   <div v-show="showModal">
     <FormBorrow @closeFormModal="closeBorrowFormModal"></FormBorrow>
@@ -25,7 +17,7 @@
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="px-6 py-3">Member name</th>
-          <th scope="col" class="px-6 py-3">Book name</th>
+          <th scope="col" class="px-6 py-3">Email</th>
           <th scope="col" class="px-6 py-3">Borrow Date</th>
           <th scope="col" class="px-6 py-3">Due Date</th>
           <th scope="col" class="px-6 py-3">Return Date</th>
