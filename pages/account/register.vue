@@ -75,4 +75,12 @@ useHead({
   title: `Register | The Booklet`,
   meta: [{ name: "description", content: "Join member to The Booklet" }],
 });
+
+const { data } = await $fetch("/api/register", {
+  method: "POST",
+  body: {
+    username: "AHHAHAH",
+  },
+});
+console.log(data);
 </script>

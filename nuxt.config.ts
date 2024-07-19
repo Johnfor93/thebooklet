@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       title: "The Bookshelf",
     },
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
 
   postcss: {
@@ -19,14 +19,9 @@ export default defineNuxtConfig({
 
   plugins: ["~/plugins/preline.client.ts"],
   compatibilityDate: "2024-07-03",
-  modules: [
-    "@pinia/nuxt",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/i18n",
-    "nuxt-lucide-icons",
-  ],
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/i18n", "nuxt-lucide-icons"],
   lucide: {
-    namePrefix: 'li-'
+    namePrefix: "li-",
   },
   pinia: {
     storesDirs: ["./stores/**"],
@@ -47,13 +42,13 @@ export default defineNuxtConfig({
     ],
   },
   env: {
-    POSTGRES_URL : process.env.POSTGRES_URL,
-    POSTGRES_PRISMA_URL : process.env.POSTGRES_PRISMA_URL,
-    POSTGRES_URL_NO_SSL : process.env.POSTGRES_URL_NO_SSL,
-    POSTGRES_URL_NON_POOLING : process.env.POSTGRES_URL_NON_POOLING,
-    POSTGRES_USER : process.env.POSTGRES_USER,
-    POSTGRES_HOST : process.env.POSTGRES_HOST,
-    POSTGRES_PASSWORD : process.env.POSTGRES_PASSWORD,
-    POSTGRES_DATABASE : process.env.POSTGRES_DATABASE,
+    POSTGRES_URL: process.env.POSTGRES_URL,
+    POSTGRES_PRISMA_URL: process.env.POSTGRES_PRISMA_URL,
+    POSTGRES_URL_NO_SSL: process.env.POSTGRES_URL_NO_SSL,
+    POSTGRES_URL_NON_POOLING: process.env.POSTGRES_URL_NON_POOLING,
+    POSTGRES_USER: process.env.POSTGRES_USER,
+    POSTGRES_HOST: process.env.POSTGRES_HOST,
+    POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD,
+    POSTGRES_DATABASE: process.env.POSTGRES_DATABASE,
   },
 });
