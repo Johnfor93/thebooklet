@@ -4,7 +4,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "admin",
+  layout: "member",
 });
 
 useHead({

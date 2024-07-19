@@ -28,7 +28,7 @@
 import BookCard from "~/components/BookCard.vue";
 import FormBook from "~/components/Modals/FormBook.vue";
 definePageMeta({
-  layout: "member",
+  layout: "admin",
 });
 
 useHead({
