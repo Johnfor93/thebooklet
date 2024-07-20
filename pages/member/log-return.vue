@@ -29,6 +29,7 @@
 
 <script setup>
 import moment from "moment";
+import { ref, onMounted } from "vue";
 
 definePageMeta({
   layout: "member",
@@ -40,15 +41,16 @@ useHead({
 });
 
 const logReturn = ref([]);
+const userData = ref({});
 
 async function getLogReturn() {
   let userLoggedIn = await localStorage.getItem("user");
-  let userData = await JSON.parse(userLoggedIn);
+  userData.value = await JSON.parse(userLoggedIn);
   console.log("myUser", userLoggedIn);
   let response = await $fetch("/api/log-return-member", {
     method: "POST",
     body: {
-      userId: userData.id,
+      userId: userData.value.id,
     },
   });
   console.log(response);
@@ -61,5 +63,7 @@ function formatDate(param) {
   return moment(param).format("DD MMM YYYY");
 }
 
-getLogReturn();
+onMounted(() => {
+  getLogReturn();
+});
 </script>

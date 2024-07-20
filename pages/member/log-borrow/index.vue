@@ -35,6 +35,7 @@
 
 <script setup>
 import moment from "moment";
+import { ref, onMounted } from "vue";
 
 definePageMeta({
   layout: "member",
@@ -48,15 +49,16 @@ useHead({
 let id = 1;
 
 const logBorrow = ref([]);
+const userData = ref({});
 
 async function getLogBorrow() {
   let userLoggedIn = await localStorage.getItem("user");
-  let userData = await JSON.parse(userLoggedIn);
+  userData.value = await JSON.parse(userLoggedIn);
   console.log("myUser", userLoggedIn);
   let response = await $fetch("/api/log-borrow-member", {
     method: "POST",
     body: {
-      userId: userData.id,
+      userId: userData.value.id,
     },
   });
   console.log(response);
@@ -69,5 +71,7 @@ function formatDate(param) {
   return moment(param).format("DD MMM YYYY");
 }
 
-getLogBorrow();
+onMounted(() => {
+  getLogBorrow();
+});
 </script>
